@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>耐心陪伴，重建學習信心</title>
+<style>
+  :root{
+    --paper:#FBF7F0;
+    --ink:#2E2A26;
+    --rust:#B5572B;
+    --sage:#5F7A61;
+    --line:#DDD3C4;
+    --soft:#F1E9DC;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    font-family:'Noto Serif TC', 'Georgia', serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.9;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:680px;margin:0 auto;padding:0 24px;}
+
+  /* Header / Hero */
+  header{
+    padding:72px 24px 48px;
+    text-align:center;
+    border-bottom:1px solid var(--line);
+  }
+  .eyebrow{
+    font-size:13px;
+    letter-spacing:0.25em;
+    color:var(--sage);
+    font-family:'Helvetica Neue', Arial, sans-serif;
+    text-transform:uppercase;
+    margin-bottom:18px;
+  }
+  h1{
+    font-size:38px;
+    font-weight:700;
+    letter-spacing:0.04em;
+    margin-bottom:10px;
+  }
+  .subtitle{
+    font-size:15px;
+    color:#7A7268;
+    font-family:'Helvetica Neue', Arial, sans-serif;
+    letter-spacing:0.05em;
+  }
+
+  /* Photo */
+  .photo-section{
+    display:flex;
+    justify-content:center;
+    margin:40px 0;
+  }
+  .photo-frame{
+    width:180px;
+    height:180px;
+    border-radius:50%;
+    overflow:hidden;
+    border:3px solid var(--rust);
+    padding:4px;
+    background:var(--paper);
+  }
+  .photo-frame img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    border-radius:50%;
+  }
+
+  /* Story */
+  .story{
+    padding:48px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .story h2{
+    font-size:22px;
+    margin-bottom:20px;
+    position:relative;
+    display:inline-block;
+  }
+  .story h2::after{
+    content:"";
+    display:block;
+    width:40px;
+    height:2px;
+    background:var(--rust);
+    margin-top:8px;
+  }
+  .story p{
+    font-size:16px;
+    margin-bottom:16px;
+    color:#3E3A35;
+  }
+  .story p:last-child{margin-bottom:0;}
+  .highlight{
+    color:var(--rust);
+    font-weight:700;
+  }
+
+  /* Info grid */
+  .info-section{
+    padding:48px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .info-section h2{
+    font-size:22px;
+    margin-bottom:24px;
+  }
+  .info-section h2::after{
+    content:"";
+    display:block;
+    width:40px;
+    height:2px;
+    background:var(--rust);
+    margin-top:8px;
+  }
+  .info-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:20px;
+  }
+  .info-card{
+    background:var(--soft);
+    border-radius:4px;
+    padding:20px 24px;
+    border-left:3px solid var(--sage);
+  }
+  .info-card .label{
+    font-family:'Helvetica Neue', Arial, sans-serif;
+    font-size:12px;
+    letter-spacing:0.15em;
+    text-transform:uppercase;
+    color:var(--sage);
+    margin-bottom:8px;
+  }
+  .info-card .value{
+    font-size:16px;
+    color:var(--ink);
+  }
+
+  /* Testimonials */
+  .testimonials{
+    padding:48px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .testimonials h2{
+    font-size:22px;
+    margin-bottom:8px;
+  }
+  .testimonials h2::after{
+    content:"";
+    display:block;
+    width:40px;
+    height:2px;
+    background:var(--rust);
+    margin-top:8px;
+    margin-bottom:24px;
+  }
+  .quote{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:4px;
+    padding:24px;
+    margin-bottom:20px;
+    position:relative;
+  }
+  .quote::before{
+    content:"“";
+    font-family:Georgia, serif;
+    font-size:48px;
+    color:var(--line);
+    position:absolute;
+    top:-6px;
+    left:14px;
+    line-height:1;
+  }
+  .quote p{
+    font-size:15px;
+    color:#4A453F;
+    padding-left:18px;
+    margin-bottom:8px;
+  }
+  .quote .tag{
+    font-family:'Helvetica Neue', Arial, sans-serif;
+    font-size:12px;
+    letter-spacing:0.1em;
+    color:var(--sage);
+    padding-left:18px;
+    text-transform:uppercase;
+  }
+
+  /* CTA */
+  .cta{
+    padding:56px 24px 72px;
+    text-align:center;
+  }
+  .cta h2{
+    font-size:24px;
+    margin-bottom:16px;
+  }
+  .cta p{
+    font-size:15px;
+    color:#7A7268;
+    margin-bottom:28px;
+  }
+  .cta-button{
+    display:inline-block;
+    background:var(--rust);
+    color:#fff;
+    font-family:'Helvetica Neue', Arial, sans-serif;
+    font-size:15px;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    text-decoration:none;
+    padding:16px 40px;
+    border-radius:2px;
+    transition:background 0.2s ease;
+  }
+  .cta-button:hover{
+    background:#943F1C;
+  }
+
+  footer{
+    text-align:center;
+    padding:24px;
+    font-size:12px;
+    color:#A89E90;
+    font-family:'Helvetica Neue', Arial, sans-serif;
+    letter-spacing:0.1em;
+  }
+
+  @media(max-width:480px){
+    h1{font-size:30px;}
+    header{padding:56px 20px 40px;}
+    .story, .info-section, .testimonials{padding:40px 0;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="eyebrow">台中 · 太平 / 北屯 / 大坑 / 東區</div>
+  <h1>耐心陪伴，重建學習信心</h1>
+  <div class="subtitle">國中、國小全科陪讀，建立讀書習慣與學習信心，數學科尤其專長</div>
+</header>
+
+<div class="wrap">
+
+  <div class="photo-section">
+    <div class="photo-frame">
+      <img src="photo.jpeg" alt="羅羅老師">
+    </div>
+  </div>
+
+  <section class="story">
+    <h2>關於我</h2>
+    <p>
+      您好，我是羅萱，目前是國立彰化師範大學諮商輔導學系的碩士生，曾任國小專輔老師，擁有超過 3 年的教學經驗。與一般解題老師不同的是，我擅長結合「學童發展心理」與「學科教學」，幫助孩子在學習路上找回主動權。
+    </p>
+    <p>
+      我的專長是<span class="highlight">引發學習動機、建立良好讀書習慣、幫助孩子找回自信</span>，這幾年的家教與專業訓練，讓我特別擅長處理「孩子明明有能力卻學不好」的狀況——通常問題不只是不會解題，而是動機、焦慮、讀書方法卡住了。
+    </p>
+  </section>
+
+  <section class="story">
+    <h2>適合對象</h2>
+    <p>孩子對課業排斥、缺乏動機、習慣逃避作業</p>
+    <p>成績卡在某個分數上不去，需要重新建立學習方法</p>
+    <p>考前容易焦慮、缺乏自信，需要陪伴與引導</p>
+    <p>國小高年級銜接國中階段，需要建立讀書習慣與策略</p>
+  </section>
+
+  <section class="story">
+    <h2>教學亮點與成效</h2>
+    <p><strong>一、專業背景與診斷力</strong></p>
+    <p>諮商心理背景：能快速判斷孩子學習卡關的心理盲點（如：挫折耐受度、考前焦慮）。</p>
+    <p>引導小成功：擅長將複雜觀念簡單化，讓孩子覺得「沒那麼難」，進而產生嘗試的勇氣與動力。</p>
+
+    <p><strong>二、教學成效</strong></p>
+    <p>數學科（動機重建）：曾指導學生數學成績提升20分以上。最大的進步不在分數，而是讓學生從原本逃避、抄襲作業，轉變為能獨立思考並準時完成，重建學習自信。</p>
+    <p>國小全科（焦慮排除）：協助高年級學生由 60 多分穩定進步至 90 多分，並引導其克服課業焦慮，轉變為在校勇敢發言、積極參與討論。</p>
+
+    <p><strong>三、教學理念</strong></p>
+    <p>我認為學習銜接階段是關鍵期，比起死背，更重要的是建立一套「通用的讀書策略」。我會透過結構化引導，幫孩子建立學習節奏，將被動讀書轉化為主動探索。</p>
+
+    <p>歡迎您先安排一次付費試教，確認孩子與我的互動頻率，再一同討論如何協助孩子，謝謝您看到這邊！</p>
+  </section>
+
+  <section class="info-section">
+    <h2>授課資訊</h2>
+    <div class="info-grid">
+      <div class="info-card">
+        <div class="label">授課科目</div>
+        <div class="value">國中、國小全科陪讀，建立讀書習慣與學習信心，數學科尤其專長</div>
+      </div>
+      <div class="info-card">
+        <div class="label">授課地區(實體)</div>
+        <div class="value">太平騎車 15-20 分鐘範圍:北屯區、大坑、東區等(依車程而定)</div>
+      </div>
+      <div class="info-card">
+        <div class="label">線上授課</div>
+        <div class="value">平板 + 電腦搭配畫面分享,板書、畫圖解題與實體上課呈現方式相近</div>
+      </div>
+      <div class="info-card">
+        <div class="label">教學風格</div>
+        <div class="value">活潑、親切、有耐心,依孩子狀況調整教學方式與節奏</div>
+      </div>
+      <div class="info-card">
+        <div class="label">時間配合度</div>
+        <div class="value">時間彈性,可再討論;短期考前複習、長期穩定帶班皆可配合</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials">
+    <h2>家長回饋</h2>
+
+    <div class="quote">
+      <p>確實有進步,也會自己上網找問題,謝謝老師的教導,讓他重新愛上了數學。</p>
+      <div class="tag">家長回饋 · 學習態度進步</div>
+    </div>
+
+    <div class="quote">
+      <p>很慶幸能遇到老師,在這段時間裡,我們看見她一步步成長,不僅找到適合自己的學習方式,也開始養成主動預習、複習的習慣,更從閱讀與學習中找回興趣與自信。這些改變都離不開老師的專業指導與耐心陪伴。</p>
+      <div class="tag">家長回饋 · 一年陪伴與成長</div>
+    </div>
+
+    <div class="quote">
+      <p>這段時間很謝謝你幫忙輔導孩子的數學,他們都很喜歡你的教學,相信將來你一定也是一位很優秀的老師。</p>
+      <div class="tag">家長回饋 · 教學受孩子喜愛</div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <h2>歡迎透過 Messenger 聯絡</h2>
+    <p>歡迎私訊討論授課時間、科目與方式,我會盡快回覆您!</p>
+    <a class="cta-button" href="https://www.facebook.com/luo.xuan.34268" target="_blank">前往 Messenger 私訊</a>
+  </section>
+
+</div>
+
+<footer>羅羅老師的家教介紹</footer>
+
+</body>
+</html>
