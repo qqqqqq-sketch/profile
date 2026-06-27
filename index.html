@@ -102,6 +102,42 @@
     font-weight:700;
   }
 
+  /* Steps */
+  .steps{
+    margin-top:20px;
+    display:grid;
+    gap:16px;
+  }
+  .step{
+    display:flex;
+    gap:16px;
+    align-items:flex-start;
+  }
+  .step-num{
+    flex-shrink:0;
+    width:32px;
+    height:32px;
+    border-radius:50%;
+    background:var(--rust);
+    color:#fff;
+    font-family:'Helvetica Neue', Arial, sans-serif;
+    font-size:14px;
+    font-weight:700;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-top:4px;
+  }
+  .step-text{
+    font-size:16px;
+    color:#3E3A35;
+  }
+  .step-text strong{
+    display:block;
+    color:var(--ink);
+    margin-bottom:4px;
+  }
+
   /* Info grid */
   .info-section{
     padding:48px 0;
@@ -170,7 +206,7 @@
     position:relative;
   }
   .quote::before{
-    content:"“";
+    content:"\201C";
     font-family:Georgia, serif;
     font-size:48px;
     color:var(--line);
@@ -253,42 +289,76 @@
 
   <div class="photo-section">
     <div class="photo-frame">
-      <img src="photo.jpeg" alt="羅羅老師">
+      <img src="photo.jpeg" alt="羅萱老師">
     </div>
   </div>
 
+  <!-- 開頭：英雄是家長與孩子 -->
   <section class="story">
-    <h2>關於我</h2>
-    <p>
-      您好，我是羅萱，目前是國立彰化師範大學諮商輔導學系的碩士生，曾任國小專輔老師，擁有超過 3 年的教學經驗。與一般解題老師不同的是，我擅長結合「學童發展心理」與「學科教學」，幫助孩子在學習路上找回主動權。
-    </p>
-    <p>
-      我的專長是<span class="highlight">引發學習動機、建立良好讀書習慣、幫助孩子找回自信</span>，這幾年的家教與專業訓練，讓我特別擅長處理「孩子明明有能力卻學不好」的狀況——通常問題不只是不會解題，而是動機、焦慮、讀書方法卡住了。
-    </p>
+    <h2>你們的狀況</h2>
+    <p>孩子每次考完試都沉默回家，你問他哪裡不會，他說「不知道」——</p>
+    <p>這種卡關，不是孩子不夠努力，也不是你不夠關心。<br>
+    很多時候，卡住的不是題目，而是<span class="highlight">動機、焦慮，和一套還沒找到的讀書方法</span>。</p>
   </section>
 
+  <!-- 適合對象：三層問題 -->
   <section class="story">
     <h2>適合對象</h2>
-    <p>孩子對課業排斥、缺乏動機、習慣逃避作業</p>
-    <p>成績卡在某個分數上不去，需要重新建立學習方法</p>
-    <p>考前容易焦慮、缺乏自信，需要陪伴與引導</p>
-    <p>國小高年級銜接國中階段，需要建立讀書習慣與策略</p>
+    <p>如果你正在煩惱以下的事：</p>
+    <p>孩子成績一直卡在某個分數，補習了也沒有明顯改變</p>
+    <p>孩子對課業充滿抗拒，作業要盯、考前要催，讓親子關係也跟著緊繃</p>
+    <p>你希望孩子不只是「會考試」，而是能夠自己找到學習的節奏和樂趣</p>
+    <p>國小升國中的銜接階段，擔心孩子的讀書習慣跟不上</p>
   </section>
 
+  <!-- 關於我：引導者登場，同理心在前、權威在後 -->
   <section class="story">
-    <h2>教學亮點與成效</h2>
-    <p><strong>一、專業背景與診斷力</strong></p>
-    <p>諮商心理背景：能快速判斷孩子學習卡關的心理盲點（如：挫折耐受度、考前焦慮）。</p>
-    <p>引導小成功：擅長將複雜觀念簡單化，讓孩子覺得「沒那麼難」，進而產生嘗試的勇氣與動力。</p>
+    <h2>關於我</h2>
+    <p>您好，我是羅萱。</p>
+    <p>我有超過 3 年的家教與陪讀經驗，同時是國立彰化師範大學<span class="highlight">諮商輔導所碩士畢業生</span>，曾任國小專輔老師。</p>
+    <p>我和一般家教老師最大的不同是：我能幫你<span class="highlight">找出孩子真正卡關的原因</span>。</p>
+    <p>成績沒有進步，有時候是不會解題；但更多時候，是挫折耐受度低、考前焦慮、或是根本不知道「怎麼讀書」。我的諮商背景讓我能快速看出這些隱藏在成績背後的問題，從根本陪孩子一起解決。</p>
+  </section>
 
-    <p><strong>二、教學成效</strong></p>
-    <p>數學科（動機重建）：曾指導學生數學成績提升20分以上。最大的進步不在分數，而是讓學生從原本逃避、抄襲作業，轉變為能獨立思考並準時完成，重建學習自信。</p>
-    <p>國小全科（焦慮排除）：協助高年級學生由 60 多分穩定進步至 90 多分，並引導其克服課業焦慮，轉變為在校勇敢發言、積極參與討論。</p>
+  <!-- 教學成效：社會認同 -->
+  <section class="story">
+    <h2>教學成效</h2>
+    <p><strong>數學動機重建</strong></p>
+    <p>帶過的學生從原本逃避作業、靠抄襲過關，到能獨立思考、準時完成，數學成績提升 40 分以上。最大的進步不在分數，而是他開始願意面對數學了。</p>
 
-    <p><strong>三、教學理念</strong></p>
-    <p>我認為學習銜接階段是關鍵期，比起死背，更重要的是建立一套「通用的讀書策略」。我會透過結構化引導，幫孩子建立學習節奏，將被動讀書轉化為主動探索。</p>
+    <p><strong>全科焦慮排除</strong></p>
+    <p>協助國小高年級學生從 60 多分穩定進步到 90 多分，同時幫助他克服課業焦慮，從不敢舉手到在課堂上主動發言。</p>
 
-    <p>歡迎您先安排一次付費試教，確認孩子與我的互動頻率，再一同討論如何協助孩子，謝謝您看到這邊！</p>
+    <p><strong>教學理念</strong></p>
+    <p>學習銜接階段是關鍵期，比起死背，更重要的是建立一套「通用的讀書策略」。我會透過結構化引導，幫孩子建立學習節奏，將被動讀書轉化為主動探索。</p>
+  </section>
+
+  <!-- 三步驟計畫 -->
+  <section class="story">
+    <h2>我們會怎麼一起走這段路</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-text">
+          <strong>安排試教，先認識孩子</strong>
+          第一堂付費試教，我會觀察孩子的學習狀態、找出卡關點，結束後和家長討論初步方向。
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-text">
+          <strong>擬定個人化學習計畫</strong>
+          依照孩子的程度與目標，規劃每週上課內容與進度，短期補強或長期穩定帶班都可以配合。
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-text">
+          <strong>持續調整，陪孩子走過關鍵期</strong>
+          我會根據孩子每次的狀態彈性調整教法，讓孩子感覺「學習是可以做到的事」。
+        </div>
+      </div>
+    </div>
   </section>
 
   <section class="info-section">
@@ -299,20 +369,20 @@
         <div class="value">國中、國小全科陪讀，建立讀書習慣與學習信心，數學科尤其專長</div>
       </div>
       <div class="info-card">
-        <div class="label">授課地區(實體)</div>
-        <div class="value">太平騎車 15-20 分鐘範圍:北屯區、大坑、東區等(依車程而定)</div>
+        <div class="label">授課地區（實體）</div>
+        <div class="value">太平騎車 15–20 分鐘範圍：北屯區、大坑、東區等（依車程而定）</div>
       </div>
       <div class="info-card">
         <div class="label">線上授課</div>
-        <div class="value">平板 + 電腦搭配畫面分享,板書、畫圖解題與實體上課呈現方式相近</div>
+        <div class="value">平板＋電腦搭配畫面分享，板書、畫圖解題與實體上課呈現方式相近</div>
       </div>
       <div class="info-card">
         <div class="label">教學風格</div>
-        <div class="value">活潑、親切、有耐心,依孩子狀況調整教學方式與節奏</div>
+        <div class="value">活潑、親切、有耐心，依孩子狀況調整教學方式與節奏</div>
       </div>
       <div class="info-card">
         <div class="label">時間配合度</div>
-        <div class="value">時間彈性,可再討論;短期考前複習、長期穩定帶班皆可配合</div>
+        <div class="value">時間彈性，可再討論；短期考前複習、長期穩定帶班皆可配合</div>
       </div>
     </div>
   </section>
@@ -321,30 +391,34 @@
     <h2>家長回饋</h2>
 
     <div class="quote">
-      <p>確實有進步,也會自己上網找問題,謝謝老師的教導,讓他重新愛上了數學。</p>
+      <p>確實有進步，也會自己上網找問題，謝謝老師的教導，讓他重新愛上了數學。</p>
       <div class="tag">家長回饋 · 學習態度進步</div>
     </div>
 
     <div class="quote">
-      <p>很慶幸能遇到老師,在這段時間裡,我們看見她一步步成長,不僅找到適合自己的學習方式,也開始養成主動預習、複習的習慣,更從閱讀與學習中找回興趣與自信。這些改變都離不開老師的專業指導與耐心陪伴。</p>
+      <p>很慶幸能遇到老師，在這段時間裡，我們看見她一步步成長，不僅找到適合自己的學習方式，也開始養成主動預習、複習的習慣，更從閱讀與學習中找回興趣與自信。這些改變都離不開老師的專業指導與耐心陪伴。</p>
       <div class="tag">家長回饋 · 一年陪伴與成長</div>
     </div>
 
     <div class="quote">
-      <p>這段時間很謝謝你幫忙輔導孩子的數學,他們都很喜歡你的教學,相信將來你一定也是一位很優秀的老師。</p>
+      <p>這段時間很謝謝你幫忙輔導孩子的數學，他們都很喜歡你的教學，相信將來你一定也是一位很優秀的老師。</p>
       <div class="tag">家長回饋 · 教學受孩子喜愛</div>
     </div>
   </section>
 
+  <!-- 圓夢結尾 + CTA -->
   <section class="cta">
     <h2>歡迎透過 Messenger 聯絡</h2>
-    <p>歡迎私訊討論授課時間、科目與方式,我會盡快回覆您!</p>
+    <p>當孩子開始主動問問題、不再害怕考試的那一刻——<br>
+    那不只是成績的進步，而是他找回了對自己的信心。<br>
+    這就是我們一起努力的方向。</p>
+    <p>不確定適不適合也沒關係～歡迎先私訊聊聊孩子的狀況，我會盡快回覆您。</p>
     <a class="cta-button" href="https://www.facebook.com/luo.xuan.34268" target="_blank">前往 Messenger 私訊</a>
   </section>
 
 </div>
 
-<footer>羅羅老師的家教介紹</footer>
+<footer>羅萱的家教介紹</footer>
 
 </body>
 </html>
